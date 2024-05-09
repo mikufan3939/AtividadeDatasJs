@@ -42,9 +42,7 @@ Atividade de front end sobre datas.
     if(minutos.length<2){<br/>
         minutos="0"+minutos;<br/>
     }<br/>**
-    
-    **let novaData=`${horas}:${minutos} - ${dia}/${mes}/${ano}`;<br/>
-    return novaData;<br/>
-}<br/>**
+    **let novaData=`${horas}:${minutos} - ${dia}/${mes}/${ano}`;
+    return novaData;**
 
  A função converterData, recebe um parâmetro dataAtual, que neste caso é um objeto "new Date()" que retorna um objeto Date com a data atualizada, assim, são utilizados vários métodos para isolar as diferentes propriedades da data (mês, ano, dia, etc.), após isso são realizados vários estruturas condicionas "if" para verificar e adicionar um "0" no começo de números com um só algarismo, por fim é construída e retornada a string no formato solicitado.
