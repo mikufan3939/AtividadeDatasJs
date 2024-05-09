@@ -21,3 +21,30 @@ Atividade de front end sobre datas.
 }<br/>**
 
  A função intervaloData recebe dois parâmetros objetos do tipo "Date", assim podemos comparar os valores, e validar que a primeira data seja mais antiga. Assim podemos retornar a diferença em milisegundos da "data2" e da "data1" e retornar esse valor convertido para segundos.
+
+ ## 3 - Crie uma função que retorne a data atual no seguinte padrão: hora:minuto - dia/mês/ano.
+**function converterData(dataAtual){<br/>
+    let ano=(dataAtual.getFullYear()).toString();<br/>
+    let mes=(dataAtual.getMonth()+1).toString();<br/>
+    let dia=(dataAtual.getDate()).toString();<br/>
+    let horas=(dataAtual.getHours()).toString();<br/>
+    let minutos=(dataAtual.getMinutes()).toString();<br/>
+    console.log(mes.length);<br/>**
+    **if(mes.length<2){<br/>
+        mes="0"+mes;<br/>
+    }<br/>
+    if(dia.length<2){<br/>
+        dia="0"+dia;<br/>
+    }<br/>
+    if(horas.length<2){<br/>
+        horas="0"+horas;<br/>
+    }<br/>
+    if(minutos.length<2){<br/>
+        minutos="0"+minutos;<br/>
+    }<br/>**
+    
+    **let novaData=`${horas}:${minutos} - ${dia}/${mes}/${ano}`;<br/>
+    return novaData;<br/>
+}<br/>**
+
+ A função converterData, recebe um parâmetro dataAtual, que neste caso é um objeto "new Date()" que retorna um objeto Date com a data atualizada, assim, são utilizados vários métodos para isolar as diferentes propriedades da data (mês, ano, dia, etc.), após isso são realizados vários estruturas condicionas "if" para verificar e adicionar um "0" no começo de números com um só algarismo, por fim é construída e retornada a string no formato solicitado.
