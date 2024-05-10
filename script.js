@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function(){
         let data1=new Date(document.getElementById('data1').value);
         let data2=new Date (document.getElementById('data2').value);
         if(!validar(data1,data2)){
-            alert(`A data maior é: ${converterData(compararData(data1,data2))}`);
+            alert(`A data maior é: ${compararData(data1,data2)}`);
         }
     });
 
@@ -29,9 +29,13 @@ document.addEventListener("DOMContentLoaded", function(){
 
 function compararData (data1, data2){
     if(data1.getTime()>data2.getTime()){
-        return data1;
+        return converterData(data1);
     }
-    return data2;
+    else if(data1.getTime()==data2.getTime()){
+        let igual="As datas são iguais."
+        return igual;
+    }
+    return converterData(data2);
 }
 
 function intervaloData(data1, data2){
